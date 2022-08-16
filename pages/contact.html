@@ -1,0 +1,172 @@
+<html lang="es">
+  <head>
+    <title>Contacto</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome v6.1.1 -->
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css" />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- aos-css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!--normalize.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+    style="padding-top: 0px"
+  >
+    <header class="p-3 bg-dark text-white h-border">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="../index.html" class="nav-link px-2 text-secondary"
+                >Alquile</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="nav-link px-2 text-white"
+                >Contactenos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- secciono donde se aplica código JS -->
+
+    <section class="position-relative py-4 py-xl-5">
+      <div class="container position-relative">
+        <div class="row gx-5" style="justify-content: center; margin-top: 4rem">
+          <div class=>
+            <form class="contact-form" style="
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+        ">
+              <legend>Contáctenos</legend>
+              <p>Si tienes consultas o dudas, no dudes en contactarnos.</p>
+
+              <label for="Nombre" class="label-name">Nombre completo</label>
+              <input
+                type="text"
+                name="Nombre"
+                title="Nombre solo acepta letras y espacios en blanco"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$"
+                required="required"
+              /><span id="Nombre" class="contact-form-error none"
+                >Nombre solo acepta letras y espacios en blanco</span
+              >
+
+              <label for="Correo" class="">Correo</label>
+              <input
+                class=""
+                type="email"
+                name="Correo"
+                autocomplete="off"
+                placeholder=" "
+                title="Email incorrecto"
+                pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)*(\.[a-z]{2,15})$"
+                required=""
+              /><span id="Correo" class="contact-form-error none"
+                >Email incorrecto</span
+              >
+
+              <label for="Teléfono" class="">Numero telefónico</label>
+              <input
+                class=""
+                type="number"
+                name="Teléfono"
+                placeholder=" "
+                title="El teléfono es requerido"
+                required=""
+              /><span id="Teléfono" class="contact-form-error none"
+                >El teléfono es requerido</span
+              >
+
+              <label for="Mensaje" class="">Mensaje</label>
+              <textarea
+                class=""
+                name="Mensaje"
+                cols="50"
+                rows="5"
+                placeholder=" "
+                title="Tu comentario no debe exceder los 255 caracteres"
+                data-pattern="^.{1,255}$"
+                required=""
+              ></textarea
+              ><span id="Mensaje" class="contact-form-error none"
+                >Tu comentario no debe exceder los 255 caracteres</span
+              >
+
+              <input class="btn__contact" type="submit" value="Enviar" />
+
+              <div class="contact-form-loader none">
+                <img src="../assets/svg/loading.svg" alt="Cargando" />
+              </div>
+              <div class="contact-form-response none"></div>
+              <input
+                type="hidden"
+                name="_subject"
+                value="Tienes un nuevo contacto!"
+              />
+              <input type="hidden" name="_template" value="table" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/errorValidation.js"></script>
+    <script src="../js/API/contact-form.js"></script>
+  </body>
+</html>

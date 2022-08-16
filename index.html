@@ -1,0 +1,238 @@
+<html lang="es">
+  <head>
+    <title>Cotización</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!--normalize.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="p-3 bg-dark text-white h-border">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="./index.html" class="nav-link px-2 text-white">Alquile</a></li>
+            <li><a href="./pages/contact.html" class="nav-link px-2 text-white">Contactenos</a></li>
+            
+            
+          </ul>
+  
+          
+  
+          
+          
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container mt-3">
+        <div class="row" style="justify-content: center">
+          <div class="col-md-10 p-md-3 m-md-3">
+            <h3>Bienvenido/a aca podes alquilar casas de verano.</h3>
+
+            <form id="formSelect">
+              <div class="mb-3 form-control">
+                <label for="" class="form-label"
+                  >Seleccione la cantidad de casas de verano (Max. 6 personas por
+                  casa)</label
+                >
+                <select
+                  class="form-control"
+                  name=""
+                  id="inputCasas"
+                  required=""
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+              <div class="mb-3 form-control">
+                <label class="form-label">Adultos</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputAdults"
+                  value="1"
+                  required=""
+                />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+              <div class="mb-3 form-control">
+                <label class="form-label">Niños</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputChildren"
+                  value="0"
+                  required=""
+                />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary">
+                  Ingresar usuarios
+                </button>
+              </div>
+            </form>
+
+            <hr />
+
+            <form id="formulario">
+              <h3>Ingrese las personas que ingresaran al recinto</h3>
+              <div class="mb-3 form-control">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputNombre" />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+
+              <div class="mb-3 form-control">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="inputApellido" />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+
+              <div class="mb-3 form-control">
+                <label class="form-label">Documento</label>
+                <input type="text" class="form-control" id="inputdni" />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+
+              <div class="mb-3 form-control">
+                <label class="form-label">Edad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputEdad"
+                  value="0"
+                />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Mensaje de error</small>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button id="btnAdd" type="submit" class="btn btn-primary">
+                  Agregar
+                </button>
+              </div>
+            </form>
+            <hr />
+            <div class="d-grid gap-2">
+              <button id="btnResumen" type="submit" class="btn btn-primary">
+                Detalle reserva
+              </button>
+            </div>
+          
+
+          <div class="container">
+            <div
+              id="resumenCotizador"
+              class="col print modal"
+              style="display: none"
+            >
+              <div class="card modalResumen">
+                <div class="headerLogin">
+                  <h3></h3>
+                  <span class="close">❌</span>
+                </div>
+                <div id="imprimir" class="card-body">
+                  <div>
+                    <h3 class="card-title">Cotización</h3>
+                  </div>
+                  <p class="card-text"></p>
+                  <div id="datosRegistros"></div>
+                  <p>Detalles de su cotización:</p>
+                  <ul id="listaDetalles"></ul>
+                  <p></p>
+                  <hr />
+                  <p>Personas ingresadas</p>
+                  <div class="">
+                    <table
+                      id="tablaUsuarios"
+                      class="table table-striped table-hover"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Apellido</th>
+                          <th>Pasaporte/DNI</th>
+                          <th>Edad</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                  <hr />
+                  <p id="totalAPagar"></p>
+                  <hr />
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary" id="btnImpr">
+                    Imprimir y finalizar
+                  </button>
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button type="submit" id="btnVaciar" class="btn btn-danger">
+                    Vaciar cotización
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+
+    <script src="./js/modalResumen.js"></script>
+    <script src="./js/errorValidation.js"></script>
+    <script src="./js/cotizacion.js"></script>
+  </body>
+</html>

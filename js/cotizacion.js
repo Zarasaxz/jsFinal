@@ -23,7 +23,6 @@ const d = document;
 function main() {
   inicializarElementos();
   inicializarEventos();
-  extraerLogin();
   agregarTotalDetalles();
   obtenerUsuariosLocalStorage();
   agregarUsuariosTabla();
@@ -352,36 +351,36 @@ function vaciarUsuariosLocalStorage() {
 
 function printDiv() {
   let divContents = d.getElementById("imprimir").innerHTML;
-  let a = window.open("", "", "height=900, width=900");
-  a.d.write(divContents);
-  a.d.close();
-  a.print();
+  let impr = window.open('', '', 'height=900, width=900');
+  impr.document.write(divContents);
+  impr.document.close();
+  impr.print();
 }
 
 function botonImprimir() {
-  btnImpr.addEventListener("click", () => {
-    Swal.fire({
-      title: "¿Deseas finalizar la cotización e imprimir?",
-      showCancelButton: true,
-      confirmButtonText: "Sí",
-      denyButtonText: `Cancelar`,
-      cancelButtonText: "No",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        printDiv();
-        let boleta = Math.floor(Math.random() * 1000000);
-        Swal.fire({
-          title: "COTIZACIÓN N" + boleta,
-          text: "¡Gracias por usar nuestros servicios!",
-          icon: "success",
-        });
-        setTimeout(() => {
-          vaciarUsuariosLocalStorage();
-          localStorage.removeItem("userList");
-          window.location.href = "../index.html";
-        }, 6000);
-      }
-    });
+  btnImpr.addEventListener("click", () => { 
+      Swal.fire({ 
+          title: "¿Deseas finalizar la cotización e imprimir?",
+          showCancelButton: true,
+          confirmButtonText: 'Sí',
+          denyButtonText: `Cancelar`,
+          cancelButtonText: 'No',
+      }).then((result) => {
+          if (result.isConfirmed) {
+              printDiv();
+              let boleta = Math.floor(Math.random() * 1000000);
+              Swal.fire({
+                  title: 'COTIZACIÓN N' + boleta,
+                  text: '¡Gracias por usar nuestros servicios!',
+                  icon: 'success',
+              })
+              setTimeout(() => {
+                  vaciarUsuariosLocalStorage();
+                  localStorage.removeItem('userList');
+                  window.location.href = "../index.html";
+              }, 3000); 
+          }
+      })
   });
 }
 
